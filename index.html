@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function redirect() {
+            var shapeId = window.location.pathname.split("/").pop();
+            var deepLink = "propertymarket://share/" + shapeId;
+            window.location.href = deepLink;
+            
+            // If deep link fails, go to Play Store after 2 sec
+            setTimeout(function() {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.ascaban.propertyconnect";
+            }, 2000);
+        }
+    </script>
+</head>
+<body onload="redirect()">
+    <p>Redirecting...</p>
+</body>
+</html>
